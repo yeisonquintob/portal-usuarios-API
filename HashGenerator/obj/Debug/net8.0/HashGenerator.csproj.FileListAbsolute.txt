@@ -1,0 +1,17 @@
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/HashGenerator/bin/Debug/net8.0/HashGenerator
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/HashGenerator/bin/Debug/net8.0/HashGenerator.deps.json
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/HashGenerator/bin/Debug/net8.0/HashGenerator.runtimeconfig.json
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/HashGenerator/bin/Debug/net8.0/HashGenerator.dll
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/HashGenerator/bin/Debug/net8.0/HashGenerator.pdb
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/HashGenerator/bin/Debug/net8.0/BCrypt.Net-Next.dll
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/HashGenerator/obj/Debug/net8.0/HashGenerator.csproj.AssemblyReference.cache
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/HashGenerator/obj/Debug/net8.0/HashGenerator.GeneratedMSBuildEditorConfig.editorconfig
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/HashGenerator/obj/Debug/net8.0/HashGenerator.AssemblyInfoInputs.cache
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/HashGenerator/obj/Debug/net8.0/HashGenerator.AssemblyInfo.cs
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/HashGenerator/obj/Debug/net8.0/HashGenerator.csproj.CoreCompileInputs.cache
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/HashGenerator/obj/Debug/net8.0/HashGene.ADC516C2.Up2Date
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/HashGenerator/obj/Debug/net8.0/HashGenerator.dll
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/HashGenerator/obj/Debug/net8.0/refint/HashGenerator.dll
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/HashGenerator/obj/Debug/net8.0/HashGenerator.pdb
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/HashGenerator/obj/Debug/net8.0/HashGenerator.genruntimeconfig.cache
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/HashGenerator/obj/Debug/net8.0/ref/HashGenerator.dll

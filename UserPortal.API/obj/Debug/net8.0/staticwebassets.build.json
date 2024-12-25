@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "1JoE8V2gjRNXK1t7nVycQKRw4aTauPtQotqLOS+hilE=",
+  "Source": "UserPortal.API",
+  "BasePath": "_content/UserPortal.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

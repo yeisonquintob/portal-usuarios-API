@@ -1,0 +1,12 @@
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Shared/bin/Debug/net8.0/UserPortal.Shared.deps.json
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Shared/bin/Debug/net8.0/UserPortal.Shared.dll
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Shared/bin/Debug/net8.0/UserPortal.Shared.pdb
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Shared/obj/Debug/net8.0/UserPortal.Shared.csproj.AssemblyReference.cache
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Shared/obj/Debug/net8.0/UserPortal.Shared.GeneratedMSBuildEditorConfig.editorconfig
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Shared/obj/Debug/net8.0/UserPortal.Shared.AssemblyInfoInputs.cache
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Shared/obj/Debug/net8.0/UserPortal.Shared.AssemblyInfo.cs
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Shared/obj/Debug/net8.0/UserPortal.Shared.csproj.CoreCompileInputs.cache
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Shared/obj/Debug/net8.0/UserPortal.Shared.dll
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Shared/obj/Debug/net8.0/refint/UserPortal.Shared.dll
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Shared/obj/Debug/net8.0/UserPortal.Shared.pdb
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Shared/obj/Debug/net8.0/ref/UserPortal.Shared.dll

@@ -1,0 +1,76 @@
+2024-12-25 00:02:25.788 -05:00 [INF] Iniciando la aplicación User Portal API
+2024-12-25 00:02:26.195 -05:00 [WRN] The WebRootPath was not found: /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/wwwroot. Static files may be unavailable.
+2024-12-25 00:06:00.831 -05:00 [WRN] Failed to determine the https port for redirect.
+2024-12-25 00:06:01.957 -05:00 [INF] Intento de login para usuario: admin
+2024-12-25 00:06:02.789 -05:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-12-25 00:06:05.250 -05:00 [INF] Resultado de verificación: false
+2024-12-25 00:06:05.259 -05:00 [WRN] Contraseña inválida para usuario: admin
+2024-12-25 00:06:05.282 -05:00 [ERR] Error en login para usuario: admin
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+2024-12-25 00:06:05.364 -05:00 [ERR] Error en login de usuario
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+2024-12-25 00:06:05.398 -05:00 [INF] HTTP POST /api/Auth/login responded 500 in 4342.1688 ms
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-25 00:06:05.430 -05:00 [ERR] Error no manejado: Las credenciales proporcionadas son incorrectas
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-25 00:26:43.648 -05:00 [INF] Iniciando la aplicación User Portal API
+2024-12-25 00:26:43.919 -05:00 [WRN] The WebRootPath was not found: /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/wwwroot. Static files may be unavailable.
+2024-12-25 00:31:30.678 -05:00 [WRN] Failed to determine the https port for redirect.
+2024-12-25 00:31:31.325 -05:00 [INF] Intento de login para usuario: admin
+2024-12-25 00:31:31.327 -05:00 [INF] Intento de login para usuario: admin
+2024-12-25 00:31:32.066 -05:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-12-25 00:31:34.063 -05:00 [INF] Resultado de verificación: false
+2024-12-25 00:31:34.066 -05:00 [WRN] Contraseña inválida para usuario: admin
+2024-12-25 00:31:34.066 -05:00 [ERR] Error en login para usuario: admin
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+2024-12-25 00:31:34.099 -05:00 [WRN] Credenciales inválidas para usuario: admin
+2024-12-25 00:31:34.150 -05:00 [INF] HTTP POST /api/Auth/login responded 401 in 3380.3905 ms
+2024-12-25 00:38:34.281 -05:00 [INF] Iniciando la aplicación User Portal API
+2024-12-25 00:38:35.039 -05:00 [WRN] The WebRootPath was not found: /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/wwwroot. Static files may be unavailable.
+2024-12-25 00:41:04.278 -05:00 [INF] Iniciando la aplicación User Portal API
+2024-12-25 00:41:04.600 -05:00 [WRN] The WebRootPath was not found: /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/wwwroot. Static files may be unavailable.
+2024-12-25 00:41:30.887 -05:00 [WRN] Failed to determine the https port for redirect.
+2024-12-25 00:41:31.606 -05:00 [INF] Intento de login para usuario: admin
+2024-12-25 00:41:31.609 -05:00 [INF] Intento de login para usuario: admin
+2024-12-25 00:41:32.428 -05:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-12-25 00:41:35.293 -05:00 [INF] HTTP POST /api/Auth/login responded 200 in 4306.1558 ms
+2024-12-25 00:50:39.772 -05:00 [INF] Intento de login para usuario: admin
+2024-12-25 00:50:40.104 -05:00 [INF] Intento de login para usuario: admin
+2024-12-25 00:50:41.361 -05:00 [INF] HTTP POST /api/auth/login responded 200 in 1851.9565 ms
+2024-12-25 00:54:13.703 -05:00 [INF] Intento de login para usuario: testuser
+2024-12-25 00:54:13.714 -05:00 [INF] Intento de login para usuario: testuser
+2024-12-25 00:54:14.597 -05:00 [INF] HTTP POST /api/auth/login responded 200 in 941.0998 ms
+2024-12-25 00:54:35.052 -05:00 [INF] Intento de login para usuario: admin
+2024-12-25 00:54:35.053 -05:00 [INF] Intento de login para usuario: admin
+2024-12-25 00:54:35.726 -05:00 [INF] HTTP POST /api/auth/login responded 200 in 677.2086 ms

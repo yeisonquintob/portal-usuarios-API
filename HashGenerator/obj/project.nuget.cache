@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "e7+UJqDvm4Q=",
+  "success": true,
+  "projectFilePath": "/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/HashGenerator/HashGenerator.csproj",
+  "expectedPackageFiles": [
+    "/Users/yeisond./.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

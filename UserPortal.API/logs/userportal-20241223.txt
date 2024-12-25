@@ -1,0 +1,5 @@
+2024-12-23 06:38:55.316 -05:00 [INF] HTTP POST /api/Auth/register responded 200 in 812.9199 ms
+2024-12-23 06:39:21.074 -05:00 [INF] HTTP POST /api/Auth/login responded 200 in 444.1372 ms
+2024-12-23 06:46:03.541 -05:00 [INF] HTTP GET /api/User/6 responded 200 in 164.4517 ms
+2024-12-23 06:46:14.387 -05:00 [INF] HTTP PUT /api/User/6 responded 200 in 202.0511 ms
+2024-12-23 06:48:49.198 -05:00 [INF] HTTP PUT /api/User/6/profile-picture responded 400 in 272.3956 ms

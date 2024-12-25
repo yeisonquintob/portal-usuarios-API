@@ -1,0 +1,17 @@
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Data/bin/Debug/net8.0/UserPortal.Data.deps.json
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Data/bin/Debug/net8.0/UserPortal.Data.runtimeconfig.json
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Data/bin/Debug/net8.0/UserPortal.Data.dll
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Data/bin/Debug/net8.0/UserPortal.Data.pdb
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Data/bin/Debug/net8.0/UserPortal.Shared.dll
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Data/bin/Debug/net8.0/UserPortal.Shared.pdb
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Data/obj/Debug/net8.0/UserPortal.Data.csproj.AssemblyReference.cache
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Data/obj/Debug/net8.0/UserPortal.Data.GeneratedMSBuildEditorConfig.editorconfig
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Data/obj/Debug/net8.0/UserPortal.Data.AssemblyInfoInputs.cache
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Data/obj/Debug/net8.0/UserPortal.Data.AssemblyInfo.cs
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Data/obj/Debug/net8.0/UserPortal.Data.csproj.CoreCompileInputs.cache
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Data/obj/Debug/net8.0/UserPort.39C5F592.Up2Date
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Data/obj/Debug/net8.0/UserPortal.Data.dll
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Data/obj/Debug/net8.0/refint/UserPortal.Data.dll
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Data/obj/Debug/net8.0/UserPortal.Data.pdb
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Data/obj/Debug/net8.0/UserPortal.Data.genruntimeconfig.cache
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Data/obj/Debug/net8.0/ref/UserPortal.Data.dll

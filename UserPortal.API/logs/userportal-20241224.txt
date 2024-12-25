@@ -1,0 +1,1112 @@
+2024-12-24 00:32:01.634 -05:00 [INF] Iniciando la aplicación User Portal API
+2024-12-24 00:32:02.255 -05:00 [WRN] The WebRootPath was not found: /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/wwwroot. Static files may be unavailable.
+2024-12-24 00:34:11.978 -05:00 [WRN] Failed to determine the https port for redirect.
+2024-12-24 00:34:14.345 -05:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-12-24 00:34:16.654 -05:00 [ERR] Error en login para usuario: testuser
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 48
+2024-12-24 00:34:16.754 -05:00 [ERR] Error en login de usuario
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 48
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+2024-12-24 00:34:16.786 -05:00 [INF] HTTP POST /api/auth/login responded 500 in 4405.5733 ms
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 48
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-24 00:34:16.825 -05:00 [ERR] Error no manejado: Las credenciales proporcionadas son incorrectas
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 48
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 00:38:39.942 -05:00 [INF] HTTP POST /api/auth/register responded 200 in 2370.4495 ms
+2024-12-24 00:39:58.566 -05:00 [INF] HTTP POST /api/auth/login responded 200 in 751.8495 ms
+2024-12-24 01:11:19.043 -05:00 [INF] HTTP POST /api/auth/login responded 200 in 526.1966 ms
+2024-12-24 04:03:43.979 -05:00 [INF] HTTP POST /api/auth/login responded 200 in 2396.8441 ms
+2024-12-24 04:03:49.111 -05:00 [INF] HTTP POST /api/auth/login responded 200 in 259.1879 ms
+2024-12-24 04:03:58.482 -05:00 [INF] HTTP POST /api/auth/login responded 200 in 303.9906 ms
+2024-12-24 04:04:45.311 -05:00 [INF] HTTP POST /api/auth/login responded 200 in 385.8839 ms
+2024-12-24 04:07:18.135 -05:00 [INF] HTTP POST /api/auth/login responded 200 in 410.4926 ms
+2024-12-24 04:23:07.031 -05:00 [INF] HTTP POST /api/auth/login responded 200 in 807.0759 ms
+2024-12-24 04:23:12.614 -05:00 [INF] HTTP POST /api/auth/login responded 200 in 270.6388 ms
+2024-12-24 04:30:37.911 -05:00 [INF] HTTP POST /api/auth/login responded 200 in 485.5606 ms
+2024-12-24 04:38:49.347 -05:00 [INF] HTTP POST /api/auth/login responded 200 in 649.1563 ms
+2024-12-24 04:43:32.434 -05:00 [INF] HTTP POST /api/auth/login responded 200 in 574.0843 ms
+2024-12-24 04:52:47.361 -05:00 [INF] HTTP POST /api/auth/login responded 200 in 515.4231 ms
+2024-12-24 04:58:04.213 -05:00 [INF] HTTP POST /api/auth/login responded 200 in 534.3082 ms
+2024-12-24 04:58:55.207 -05:00 [INF] HTTP POST /api/auth/login responded 200 in 387.1200 ms
+2024-12-24 04:59:51.361 -05:00 [INF] HTTP POST /api/auth/login responded 200 in 366.9761 ms
+2024-12-24 10:05:02.016 -05:00 [ERR] Error en login para usuario: admin
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+2024-12-24 10:05:02.172 -05:00 [ERR] Error en login de usuario
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+2024-12-24 10:05:02.355 -05:00 [INF] HTTP POST /api/auth/login responded 500 in 1400.2977 ms
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-24 10:05:02.495 -05:00 [ERR] Error no manejado: Las credenciales proporcionadas son incorrectas
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 10:07:26.794 -05:00 [ERR] Error en login para usuario: admin
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+2024-12-24 10:07:26.817 -05:00 [ERR] Error en login de usuario
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+2024-12-24 10:07:26.828 -05:00 [INF] HTTP POST /api/auth/login responded 500 in 398.2404 ms
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-24 10:07:26.861 -05:00 [ERR] Error no manejado: Las credenciales proporcionadas son incorrectas
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 10:10:33.583 -05:00 [ERR] Error registrando nuevo usuario: admin
+UserPortal.Shared.Exceptions.ValidationException: El nombre de usuario ya está registrado
+   at UserPortal.Business.Services.Implementations.AuthService.RegisterAsync(RegisterUserDTO registerDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 104
+2024-12-24 10:10:33.593 -05:00 [ERR] Error en registro de usuario
+UserPortal.Shared.Exceptions.ValidationException: El nombre de usuario ya está registrado
+   at UserPortal.Business.Services.Implementations.AuthService.RegisterAsync(RegisterUserDTO registerDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 104
+   at UserPortal.API.Controllers.AuthController.Register(RegisterUserDTO registerDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 43
+2024-12-24 10:10:33.598 -05:00 [INF] HTTP POST /api/auth/register responded 500 in 312.1681 ms
+UserPortal.Shared.Exceptions.ValidationException: El nombre de usuario ya está registrado
+   at UserPortal.Business.Services.Implementations.AuthService.RegisterAsync(RegisterUserDTO registerDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 104
+   at UserPortal.API.Controllers.AuthController.Register(RegisterUserDTO registerDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 43
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-24 10:10:33.617 -05:00 [ERR] Error no manejado: El nombre de usuario ya está registrado
+UserPortal.Shared.Exceptions.ValidationException: El nombre de usuario ya está registrado
+   at UserPortal.Business.Services.Implementations.AuthService.RegisterAsync(RegisterUserDTO registerDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 104
+   at UserPortal.API.Controllers.AuthController.Register(RegisterUserDTO registerDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 43
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 10:11:01.573 -05:00 [ERR] Error registrando nuevo usuario: admin
+UserPortal.Shared.Exceptions.ValidationException: El nombre de usuario ya está registrado
+   at UserPortal.Business.Services.Implementations.AuthService.RegisterAsync(RegisterUserDTO registerDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 104
+2024-12-24 10:11:01.577 -05:00 [ERR] Error en registro de usuario
+UserPortal.Shared.Exceptions.ValidationException: El nombre de usuario ya está registrado
+   at UserPortal.Business.Services.Implementations.AuthService.RegisterAsync(RegisterUserDTO registerDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 104
+   at UserPortal.API.Controllers.AuthController.Register(RegisterUserDTO registerDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 43
+2024-12-24 10:11:01.582 -05:00 [INF] HTTP POST /api/auth/register responded 500 in 49.2916 ms
+UserPortal.Shared.Exceptions.ValidationException: El nombre de usuario ya está registrado
+   at UserPortal.Business.Services.Implementations.AuthService.RegisterAsync(RegisterUserDTO registerDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 104
+   at UserPortal.API.Controllers.AuthController.Register(RegisterUserDTO registerDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 43
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-24 10:11:01.620 -05:00 [ERR] Error no manejado: El nombre de usuario ya está registrado
+UserPortal.Shared.Exceptions.ValidationException: El nombre de usuario ya está registrado
+   at UserPortal.Business.Services.Implementations.AuthService.RegisterAsync(RegisterUserDTO registerDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 104
+   at UserPortal.API.Controllers.AuthController.Register(RegisterUserDTO registerDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 43
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 10:11:20.746 -05:00 [ERR] Error en login para usuario: admin
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+2024-12-24 10:11:20.747 -05:00 [ERR] Error en login de usuario
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+2024-12-24 10:11:20.764 -05:00 [INF] HTTP POST /api/auth/login responded 500 in 328.2286 ms
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-24 10:11:20.771 -05:00 [ERR] Error no manejado: Las credenciales proporcionadas son incorrectas
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 13:33:30.119 -05:00 [WRN] As of ""2024-12-24T18:33:22.1258780+00:00"", the heartbeat has been running for ""00:00:06.3565846"" which is longer than ""00:00:01"". This could be caused by thread pool starvation.
+2024-12-24 14:06:14.429 -05:00 [ERR] Error en login para usuario: admin
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+2024-12-24 14:06:14.454 -05:00 [ERR] Error en login de usuario
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+2024-12-24 14:06:14.479 -05:00 [INF] HTTP POST /api/auth/login responded 500 in 1192.3881 ms
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-24 14:06:14.562 -05:00 [ERR] Error no manejado: Las credenciales proporcionadas son incorrectas
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 14:06:52.578 -05:00 [INF] HTTP POST /api/auth/login responded 200 in 887.7672 ms
+2024-12-24 14:14:54.573 -05:00 [ERR] Error en login para usuario: admin
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+2024-12-24 14:14:54.587 -05:00 [ERR] Error en login de usuario
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+2024-12-24 14:14:54.614 -05:00 [INF] HTTP POST /api/auth/login responded 500 in 565.8803 ms
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-24 14:14:54.680 -05:00 [ERR] Error no manejado: Las credenciales proporcionadas son incorrectas
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 14:15:49.480 -05:00 [ERR] Error en login para usuario: admin
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+2024-12-24 14:15:49.481 -05:00 [ERR] Error en login de usuario
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+2024-12-24 14:15:49.496 -05:00 [INF] HTTP POST /api/auth/login responded 500 in 410.2411 ms
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-24 14:15:49.541 -05:00 [ERR] Error no manejado: Las credenciales proporcionadas son incorrectas
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 14:15:59.294 -05:00 [INF] HTTP POST /api/auth/login responded 200 in 398.5180 ms
+2024-12-24 14:16:05.297 -05:00 [INF] HTTP POST /api/auth/login responded 200 in 727.0697 ms
+2024-12-24 14:17:10.861 -05:00 [ERR] Error en login para usuario: admin
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+2024-12-24 14:17:10.866 -05:00 [ERR] Error en login de usuario
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+2024-12-24 14:17:10.885 -05:00 [INF] HTTP POST /api/auth/login responded 500 in 407.5971 ms
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-24 14:17:10.939 -05:00 [ERR] Error no manejado: Las credenciales proporcionadas son incorrectas
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 14:19:09.749 -05:00 [ERR] Error en login para usuario: admin
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+2024-12-24 14:19:09.764 -05:00 [ERR] Error en login de usuario
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+2024-12-24 14:19:09.777 -05:00 [INF] HTTP POST /api/auth/login responded 500 in 881.5931 ms
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-24 14:19:09.831 -05:00 [ERR] Error no manejado: Las credenciales proporcionadas son incorrectas
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 14:21:27.448 -05:00 [ERR] Error no manejado: Invalid non-ASCII or control character in header: 0x00E1
+System.InvalidOperationException: Invalid non-ASCII or control character in header: 0x00E1
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowInvalidHeaderCharacter(Char ch)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.SetValueFast(String key, StringValues value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at UserPortal.API.Extensions.JwtConfigurationExtensions.<>c.<ConfigureJwtAuthentication>b__0_4(JwtBearerChallengeContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Extensions/AuthenticationExtensions.cs:line 70
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerEvents.Challenge(JwtBearerChallengeContext context)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.ChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 14:21:44.980 -05:00 [ERR] Error no manejado: Invalid non-ASCII or control character in header: 0x00E1
+System.InvalidOperationException: Invalid non-ASCII or control character in header: 0x00E1
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowInvalidHeaderCharacter(Char ch)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.SetValueFast(String key, StringValues value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at UserPortal.API.Extensions.JwtConfigurationExtensions.<>c.<ConfigureJwtAuthentication>b__0_4(JwtBearerChallengeContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Extensions/AuthenticationExtensions.cs:line 70
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerEvents.Challenge(JwtBearerChallengeContext context)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.ChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 14:22:02.152 -05:00 [INF] Iniciando la aplicación User Portal API
+2024-12-24 14:22:02.440 -05:00 [WRN] The WebRootPath was not found: /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/wwwroot. Static files may be unavailable.
+2024-12-24 14:22:06.387 -05:00 [WRN] Failed to determine the https port for redirect.
+2024-12-24 14:22:06.459 -05:00 [ERR] Error no manejado: Invalid non-ASCII or control character in header: 0x00E1
+System.InvalidOperationException: Invalid non-ASCII or control character in header: 0x00E1
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowInvalidHeaderCharacter(Char ch)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ValidateHeaderValueCharacters(String headerCharacters, Boolean requireAscii)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ValidateHeaderValueCharacters(String headerName, StringValues headerValues, Func`2 encodingSelector)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.SetValueFast(String key, StringValues value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at UserPortal.API.Extensions.JwtConfigurationExtensions.<>c.<ConfigureJwtAuthentication>b__0_4(JwtBearerChallengeContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Extensions/AuthenticationExtensions.cs:line 70
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerEvents.Challenge(JwtBearerChallengeContext context)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.ChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 14:22:12.342 -05:00 [ERR] Error no manejado: Invalid non-ASCII or control character in header: 0x00E1
+System.InvalidOperationException: Invalid non-ASCII or control character in header: 0x00E1
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowInvalidHeaderCharacter(Char ch)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ValidateHeaderValueCharacters(String headerCharacters, Boolean requireAscii)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ValidateHeaderValueCharacters(String headerName, StringValues headerValues, Func`2 encodingSelector)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseHeaders.SetValueFast(String key, StringValues value)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at UserPortal.API.Extensions.JwtConfigurationExtensions.<>c.<ConfigureJwtAuthentication>b__0_4(JwtBearerChallengeContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Extensions/AuthenticationExtensions.cs:line 70
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerEvents.Challenge(JwtBearerChallengeContext context)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.ChallengeAsync(AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.<>c__DisplayClass0_0.<<HandleAsync>g__Handle|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 14:31:03.396 -05:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-12-24 14:31:06.783 -05:00 [ERR] Error en login para usuario: admin
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+2024-12-24 14:31:06.800 -05:00 [ERR] Error en login de usuario
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+2024-12-24 14:31:06.823 -05:00 [INF] HTTP POST /api/Auth/login responded 500 in 5157.7365 ms
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-24 14:31:06.851 -05:00 [ERR] Error no manejado: Las credenciales proporcionadas son incorrectas
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 14:31:43.768 -05:00 [INF] Iniciando la aplicación User Portal API
+2024-12-24 14:31:43.954 -05:00 [WRN] The WebRootPath was not found: /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/wwwroot. Static files may be unavailable.
+2024-12-24 14:31:47.308 -05:00 [WRN] Failed to determine the https port for redirect.
+2024-12-24 14:31:48.515 -05:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-12-24 14:31:50.490 -05:00 [ERR] Error en login para usuario: admin
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+2024-12-24 14:31:50.512 -05:00 [ERR] Error en login de usuario
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+2024-12-24 14:31:50.533 -05:00 [INF] HTTP POST /api/Auth/login responded 500 in 3163.5075 ms
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-24 14:31:50.550 -05:00 [ERR] Error no manejado: Las credenciales proporcionadas son incorrectas
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 58
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 15:18:33.485 -05:00 [INF] Iniciando la aplicación User Portal API
+2024-12-24 15:18:33.727 -05:00 [WRN] The WebRootPath was not found: /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/wwwroot. Static files may be unavailable.
+2024-12-24 15:18:45.777 -05:00 [WRN] Failed to determine the https port for redirect.
+2024-12-24 15:18:47.539 -05:00 [INF] Intento de login para usuario: admin
+2024-12-24 15:18:48.412 -05:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-12-24 15:18:50.550 -05:00 [WRN] Contraseña inválida para usuario: admin
+2024-12-24 15:18:50.551 -05:00 [ERR] Error en login para usuario: admin
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 63
+2024-12-24 15:18:50.580 -05:00 [ERR] Error en login de usuario
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 63
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+2024-12-24 15:18:50.614 -05:00 [INF] HTTP POST /api/Auth/login responded 500 in 4365.7484 ms
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 63
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-24 15:18:50.643 -05:00 [ERR] Error no manejado: Las credenciales proporcionadas son incorrectas
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 63
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 15:22:18.998 -05:00 [INF] Iniciando la aplicación User Portal API
+2024-12-24 15:22:19.403 -05:00 [WRN] The WebRootPath was not found: /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/wwwroot. Static files may be unavailable.
+2024-12-24 15:22:26.026 -05:00 [WRN] Failed to determine the https port for redirect.
+2024-12-24 15:22:26.784 -05:00 [INF] Intento de login para usuario: admin
+2024-12-24 15:22:27.979 -05:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-12-24 15:22:29.791 -05:00 [INF] Verificando contraseña. Hash almacenado: $2a$11$MDhq7BgXqbN9Y4kxrTv0aeN87R.xZV0.bNX4Dh9ffV2PpM0yoZU6u
+2024-12-24 15:22:30.645 -05:00 [INF] Resultado de verificación: false
+2024-12-24 15:22:30.648 -05:00 [WRN] Contraseña inválida para usuario: admin
+2024-12-24 15:22:30.652 -05:00 [ERR] Error en login para usuario: admin
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 63
+2024-12-24 15:22:30.728 -05:00 [ERR] Error en login de usuario
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 63
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+2024-12-24 15:22:30.763 -05:00 [INF] HTTP POST /api/Auth/login responded 500 in 4624.9790 ms
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 63
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-24 15:22:30.778 -05:00 [ERR] Error no manejado: Las credenciales proporcionadas son incorrectas
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 63
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 15:23:00.214 -05:00 [INF] Intento de login para usuario: admin
+2024-12-24 15:23:00.462 -05:00 [INF] Verificando contraseña. Hash almacenado: $2a$11$d7Zy9e1qj8uVN3yKcTOyduqP2qHJ8TXkJtNQU4kMqNXVaRtgD4KUS
+2024-12-24 15:23:00.973 -05:00 [INF] Resultado de verificación: false
+2024-12-24 15:23:00.973 -05:00 [WRN] Contraseña inválida para usuario: admin
+2024-12-24 15:23:00.974 -05:00 [ERR] Error en login para usuario: admin
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 63
+2024-12-24 15:23:00.988 -05:00 [ERR] Error en login de usuario
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 63
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+2024-12-24 15:23:00.993 -05:00 [INF] HTTP POST /api/Auth/login responded 500 in 796.6090 ms
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 63
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-24 15:23:01.000 -05:00 [ERR] Error no manejado: Las credenciales proporcionadas son incorrectas
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 63
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 15:23:28.751 -05:00 [INF] Intento de login para usuario: admin
+2024-12-24 15:23:28.832 -05:00 [INF] Verificando contraseña. Hash almacenado: $2a$11$d7Zy9e1qj8uVN3yKcTOyduqP2qHJ8TXkJtNQU4kMqNXVaRtgD4KUS
+2024-12-24 15:23:29.044 -05:00 [INF] Resultado de verificación: false
+2024-12-24 15:23:29.044 -05:00 [WRN] Contraseña inválida para usuario: admin
+2024-12-24 15:23:29.045 -05:00 [ERR] Error en login para usuario: admin
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 63
+2024-12-24 15:23:29.048 -05:00 [ERR] Error en login de usuario
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 63
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+2024-12-24 15:23:29.106 -05:00 [INF] HTTP POST /api/Auth/login responded 500 in 412.1748 ms
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 63
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-24 15:23:29.108 -05:00 [ERR] Error no manejado: Las credenciales proporcionadas son incorrectas
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 63
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 15:24:07.123 -05:00 [INF] Intento de login para usuario: admin
+2024-12-24 15:24:07.142 -05:00 [INF] Verificando contraseña. Hash almacenado: $2a$11$d7Zy9e1qj8uVN3yKcTOyduqP2qHJ8TXkJtNQU4kMqNXVaRtgD4KUS
+2024-12-24 15:24:07.380 -05:00 [INF] Resultado de verificación: false
+2024-12-24 15:24:07.381 -05:00 [WRN] Contraseña inválida para usuario: admin
+2024-12-24 15:24:07.383 -05:00 [ERR] Error en login para usuario: admin
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 63
+2024-12-24 15:24:07.384 -05:00 [ERR] Error en login de usuario
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 63
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+2024-12-24 15:24:07.386 -05:00 [INF] HTTP POST /api/Auth/login responded 500 in 267.0302 ms
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 63
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-24 15:24:07.398 -05:00 [ERR] Error no manejado: Las credenciales proporcionadas son incorrectas
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 63
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 15:28:39.230 -05:00 [INF] Iniciando la aplicación User Portal API
+2024-12-24 15:28:39.450 -05:00 [WRN] The WebRootPath was not found: /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/wwwroot. Static files may be unavailable.
+2024-12-24 15:28:42.162 -05:00 [WRN] Failed to determine the https port for redirect.
+2024-12-24 15:28:42.819 -05:00 [INF] Intento de login para usuario: admin
+2024-12-24 15:28:43.806 -05:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-12-24 15:28:46.190 -05:00 [INF] Verificación fallida
+2024-12-24 15:28:46.192 -05:00 [WRN] Contraseña inválida para usuario: admin
+2024-12-24 15:28:46.193 -05:00 [ERR] Error en login para usuario: admin
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 63
+2024-12-24 15:28:46.227 -05:00 [ERR] Error en login de usuario
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 63
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+2024-12-24 15:28:46.253 -05:00 [INF] HTTP POST /api/Auth/login responded 500 in 4000.9239 ms
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 63
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-24 15:28:46.273 -05:00 [ERR] Error no manejado: Las credenciales proporcionadas son incorrectas
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 63
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 21:02:53.413 -05:00 [INF] Iniciando la aplicación User Portal API
+2024-12-24 21:02:53.653 -05:00 [WRN] The WebRootPath was not found: /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/wwwroot. Static files may be unavailable.
+2024-12-24 21:05:50.309 -05:00 [WRN] Failed to determine the https port for redirect.
+2024-12-24 21:05:51.297 -05:00 [INF] Intento de login para usuario: admin
+2024-12-24 21:05:52.136 -05:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-12-24 21:05:54.653 -05:00 [INF] Resultado de verificación: false
+2024-12-24 21:05:54.663 -05:00 [WRN] Contraseña inválida para usuario: admin
+2024-12-24 21:05:54.672 -05:00 [ERR] Error en login para usuario: admin
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+2024-12-24 21:05:54.747 -05:00 [ERR] Error en login de usuario
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+2024-12-24 21:05:54.775 -05:00 [INF] HTTP POST /api/Auth/login responded 500 in 4231.8789 ms
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-24 21:05:54.800 -05:00 [ERR] Error no manejado: Las credenciales proporcionadas son incorrectas
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 21:09:05.830 -05:00 [INF] Intento de login para usuario: admin
+2024-12-24 21:09:06.729 -05:00 [INF] Resultado de verificación: false
+2024-12-24 21:09:06.730 -05:00 [WRN] Contraseña inválida para usuario: admin
+2024-12-24 21:09:06.730 -05:00 [ERR] Error en login para usuario: admin
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+2024-12-24 21:09:06.732 -05:00 [ERR] Error en login de usuario
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+2024-12-24 21:09:06.747 -05:00 [INF] HTTP POST /api/Auth/login responded 500 in 930.2855 ms
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-24 21:09:06.801 -05:00 [ERR] Error no manejado: Las credenciales proporcionadas son incorrectas
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 21:20:12.154 -05:00 [INF] Iniciando la aplicación User Portal API
+2024-12-24 21:20:12.485 -05:00 [WRN] The WebRootPath was not found: /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/wwwroot. Static files may be unavailable.
+2024-12-24 21:21:04.859 -05:00 [WRN] Failed to determine the https port for redirect.
+2024-12-24 21:21:05.755 -05:00 [INF] Intento de login para usuario: admin
+2024-12-24 21:21:07.622 -05:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-12-24 21:21:09.141 -05:00 [WRN] Error en la verificación inicial, intentando formato alternativo
+System.ArgumentOutOfRangeException: Index and length must refer to a location within the string. (Parameter 'length')
+   at System.String.ThrowSubstringArgumentOutOfRange(Int32 startIndex, Int32 length)
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt, Boolean enhancedEntropy, HashType hashType)
+   at BCrypt.Net.BCrypt.Verify(String text, String hash, Boolean enhancedEntropy, HashType hashType)
+   at UserPortal.Data.Infrastructure.BCryptPasswordHasher.VerifyPassword(String password, String hash) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Data/Infrastructure/BCryptPasswordHasher.cs:line 47
+2024-12-24 21:21:09.179 -05:00 [ERR] Error en la verificación alternativa
+System.ArgumentOutOfRangeException: Index and length must refer to a location within the string. (Parameter 'length')
+   at System.String.ThrowSubstringArgumentOutOfRange(Int32 startIndex, Int32 length)
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt, Boolean enhancedEntropy, HashType hashType)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt)
+   at UserPortal.Data.Infrastructure.BCryptPasswordHasher.VerifyPassword(String password, String hash) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Data/Infrastructure/BCryptPasswordHasher.cs:line 56
+2024-12-24 21:21:09.180 -05:00 [WRN] Contraseña inválida para usuario: admin
+2024-12-24 21:21:09.182 -05:00 [ERR] Error en login para usuario: admin
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+2024-12-24 21:21:09.188 -05:00 [ERR] Error en login de usuario
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+2024-12-24 21:21:09.223 -05:00 [INF] HTTP POST /api/Auth/login responded 500 in 4234.1252 ms
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-24 21:21:09.242 -05:00 [ERR] Error no manejado: Las credenciales proporcionadas son incorrectas
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 21:28:03.895 -05:00 [INF] Iniciando la aplicación User Portal API
+2024-12-24 21:28:04.255 -05:00 [WRN] The WebRootPath was not found: /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/wwwroot. Static files may be unavailable.
+2024-12-24 21:28:25.363 -05:00 [WRN] Failed to determine the https port for redirect.
+2024-12-24 21:28:26.033 -05:00 [INF] Intento de login para usuario: admin
+2024-12-24 21:28:27.019 -05:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-12-24 21:28:28.664 -05:00 [WRN] Error en la verificación inicial, intentando formato alternativo
+System.ArgumentOutOfRangeException: Index and length must refer to a location within the string. (Parameter 'length')
+   at System.String.ThrowSubstringArgumentOutOfRange(Int32 startIndex, Int32 length)
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt, Boolean enhancedEntropy, HashType hashType)
+   at BCrypt.Net.BCrypt.Verify(String text, String hash, Boolean enhancedEntropy, HashType hashType)
+   at UserPortal.Data.Infrastructure.BCryptPasswordHasher.VerifyPassword(String password, String hash) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Data/Infrastructure/BCryptPasswordHasher.cs:line 47
+2024-12-24 21:28:28.690 -05:00 [ERR] Error en la verificación alternativa
+System.ArgumentOutOfRangeException: Index and length must refer to a location within the string. (Parameter 'length')
+   at System.String.ThrowSubstringArgumentOutOfRange(Int32 startIndex, Int32 length)
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt, Boolean enhancedEntropy, HashType hashType)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt)
+   at UserPortal.Data.Infrastructure.BCryptPasswordHasher.VerifyPassword(String password, String hash) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Data/Infrastructure/BCryptPasswordHasher.cs:line 56
+2024-12-24 21:28:28.691 -05:00 [WRN] Contraseña inválida para usuario: admin
+2024-12-24 21:28:28.692 -05:00 [ERR] Error en login para usuario: admin
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+2024-12-24 21:28:28.702 -05:00 [ERR] Error en login de usuario
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+2024-12-24 21:28:28.735 -05:00 [INF] HTTP POST /api/Auth/login responded 500 in 3263.0094 ms
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-24 21:28:28.769 -05:00 [ERR] Error no manejado: Las credenciales proporcionadas son incorrectas
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27
+2024-12-24 23:52:22.045 -05:00 [INF] Iniciando la aplicación User Portal API
+2024-12-24 23:52:22.262 -05:00 [WRN] The WebRootPath was not found: /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/wwwroot. Static files may be unavailable.
+2024-12-24 23:54:15.344 -05:00 [WRN] Failed to determine the https port for redirect.
+2024-12-24 23:54:15.958 -05:00 [INF] Intento de login para usuario: admin
+2024-12-24 23:54:16.805 -05:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-12-24 23:54:18.284 -05:00 [WRN] Error en la verificación inicial, intentando formato alternativo
+System.ArgumentOutOfRangeException: Index and length must refer to a location within the string. (Parameter 'length')
+   at System.String.ThrowSubstringArgumentOutOfRange(Int32 startIndex, Int32 length)
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt, Boolean enhancedEntropy, HashType hashType)
+   at BCrypt.Net.BCrypt.Verify(String text, String hash, Boolean enhancedEntropy, HashType hashType)
+   at UserPortal.Data.Infrastructure.BCryptPasswordHasher.VerifyPassword(String password, String hash) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Data/Infrastructure/BCryptPasswordHasher.cs:line 47
+2024-12-24 23:54:18.307 -05:00 [ERR] Error en la verificación alternativa
+System.ArgumentOutOfRangeException: Index and length must refer to a location within the string. (Parameter 'length')
+   at System.String.ThrowSubstringArgumentOutOfRange(Int32 startIndex, Int32 length)
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt, Boolean enhancedEntropy, HashType hashType)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt)
+   at UserPortal.Data.Infrastructure.BCryptPasswordHasher.VerifyPassword(String password, String hash) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Data/Infrastructure/BCryptPasswordHasher.cs:line 56
+2024-12-24 23:54:18.309 -05:00 [WRN] Contraseña inválida para usuario: admin
+2024-12-24 23:54:18.309 -05:00 [ERR] Error en login para usuario: admin
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+2024-12-24 23:54:18.337 -05:00 [ERR] Error en login de usuario
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+2024-12-24 23:54:18.356 -05:00 [INF] HTTP POST /api/Auth/login responded 500 in 2926.6432 ms
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-12-24 23:54:18.372 -05:00 [ERR] Error no manejado: Las credenciales proporcionadas son incorrectas
+UserPortal.Shared.Exceptions.UnauthorizedException: Las credenciales proporcionadas son incorrectas
+   at UserPortal.Business.Services.Implementations.AuthService.LoginAsync(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/Services/Implementations/AuthService.cs:line 59
+   at UserPortal.API.Controllers.AuthController.Login(LoginUserDTO loginDto) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Controllers/AuthController.cs:line 67
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at UserPortal.API.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.API/Middleware/ErrorHandlingMiddleware.cs:line 27

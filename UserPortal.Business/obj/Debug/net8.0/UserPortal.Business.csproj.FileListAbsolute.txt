@@ -1,0 +1,17 @@
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/bin/Debug/net8.0/UserPortal.Business.deps.json
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/bin/Debug/net8.0/UserPortal.Business.dll
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/bin/Debug/net8.0/UserPortal.Business.pdb
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/bin/Debug/net8.0/UserPortal.Data.dll
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/bin/Debug/net8.0/UserPortal.Shared.dll
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/bin/Debug/net8.0/UserPortal.Data.pdb
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/bin/Debug/net8.0/UserPortal.Shared.pdb
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/obj/Debug/net8.0/UserPortal.Business.csproj.AssemblyReference.cache
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/obj/Debug/net8.0/UserPortal.Business.GeneratedMSBuildEditorConfig.editorconfig
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/obj/Debug/net8.0/UserPortal.Business.AssemblyInfoInputs.cache
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/obj/Debug/net8.0/UserPortal.Business.AssemblyInfo.cs
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/obj/Debug/net8.0/UserPortal.Business.csproj.CoreCompileInputs.cache
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/obj/Debug/net8.0/UserPort.D2980395.Up2Date
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/obj/Debug/net8.0/UserPortal.Business.dll
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/obj/Debug/net8.0/refint/UserPortal.Business.dll
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/obj/Debug/net8.0/UserPortal.Business.pdb
+/Users/yeisond./Desktop/proyecto/API REST/UserPortalSolution/UserPortal.Business/obj/Debug/net8.0/ref/UserPortal.Business.dll
