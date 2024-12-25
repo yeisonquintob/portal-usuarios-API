@@ -164,5 +164,5 @@ Se implementaron pruebas unitarias para las siguientes funcionalidades clave:
 
 ---
 
-**Equipo de Desarrollo**: Fredy Fuentes y Yeison D. Quinto.
+**Equipo de Desarrollo**: Yeison D. Quinto.
 
