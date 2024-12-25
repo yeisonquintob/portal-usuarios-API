@@ -1,0 +1,128 @@
+# Manual de Implementación de Base de Datos - Portal de Usuarios
+
+## Requisitos Previos
+- SQL Server 2019 o superior instalado
+- SQL Server Management Studio (SSMS)
+- Credenciales de administrador
+
+## Pasos de Implementación
+
+### 1. Configuración Inicial
+```sql
+-- Crear y usar la base de datos
+CREATE DATABASE UserPortalDB
+GO
+USE UserPortalDB
+```
+
+### 2. Estructura de Tablas
+
+#### Roles (Tabla Maestra)
+- Almacena los tipos de usuarios
+- Solo dos roles iniciales: Admin y User
+```sql
+CREATE TABLE [dbo].[Roles] (
+    [Id] INT IDENTITY(1,1) PRIMARY KEY,
+    [Name] NVARCHAR(50) NOT NULL,
+    [Description] NVARCHAR(200) NULL,
+    [CreatedAt] DATETIME2 NOT NULL DEFAULT GETUTCDATE(),
+    [IsActive] BIT NOT NULL DEFAULT 1
+)
+```
+
+#### Users (Tabla Principal)
+- Información de usuarios
+- Contraseñas hasheadas con BCrypt
+```sql
+CREATE TABLE [dbo].[Users] (
+    [Id] INT IDENTITY(1,1) PRIMARY KEY,
+    [Username] NVARCHAR(50) NOT NULL,
+    [Email] NVARCHAR(100) NOT NULL,
+    [PasswordHash] NVARCHAR(256) NOT NULL,
+    [FirstName] NVARCHAR(50) NOT NULL,
+    [LastName] NVARCHAR(50) NOT NULL,
+    [ProfilePicture] NVARCHAR(2048) NULL,
+    [RoleId] INT NOT NULL REFERENCES Roles(Id),
+    [LastLogin] DATETIME2 NULL,
+    [CreatedAt] DATETIME2 NOT NULL DEFAULT GETUTCDATE(),
+    [IsActive] BIT NOT NULL DEFAULT 1
+)
+```
+
+#### RefreshTokens (Tabla de Seguridad)
+- Gestión de tokens JWT
+```sql
+CREATE TABLE [dbo].[RefreshTokens] (
+    [Id] INT IDENTITY(1,1) PRIMARY KEY,
+    [Token] NVARCHAR(256) NOT NULL,
+    [ExpiresAt] DATETIME2 NOT NULL,
+    [UserId] INT NOT NULL,
+    [UsedAt] DATETIME2 NULL,
+    [InvalidatedAt] DATETIME2 NULL,
+    [CreatedAt] DATETIME2 NOT NULL DEFAULT GETUTCDATE(),
+    [IsActive] BIT NOT NULL DEFAULT 1,
+    CONSTRAINT [FK_RefreshTokens_Users] FOREIGN KEY ([UserId]) 
+        REFERENCES [Users]([Id]) ON DELETE CASCADE
+)
+```
+
+### 3. Índices Importantes
+```sql
+-- Users
+CREATE UNIQUE INDEX [UQ_Users_Username] ON [Users]([Username]) WHERE IsActive = 1
+CREATE UNIQUE INDEX [UQ_Users_Email] ON [Users]([Email]) WHERE IsActive = 1
+CREATE INDEX [IX_Users_RoleId] ON [Users]([RoleId])
+
+-- RefreshTokens
+CREATE INDEX [IX_RefreshTokens_Token] ON [RefreshTokens]([Token])
+CREATE INDEX [IX_RefreshTokens_UserId_Status] ON [RefreshTokens]([UserId], [InvalidatedAt], [UsedAt], [ExpiresAt])
+```
+
+### 4. Datos Iniciales
+```sql
+-- Roles básicos
+INSERT INTO [Roles] ([Name], [Description]) VALUES
+('Admin', 'Administrador del sistema con acceso total'),
+('User', 'Usuario regular con acceso limitado')
+```
+
+### 5. Verificación
+```sql
+-- Validar estructura
+SELECT * FROM sys.tables
+SELECT * FROM sys.indexes
+SELECT * FROM Roles
+
+-- Verificar constraints
+SELECT * FROM sys.foreign_keys
+```
+
+## Consideraciones de Seguridad
+1. Passwords:
+   - Solo almacenar hashes BCrypt
+   - Nunca almacenar contraseñas en texto plano
+   - Longitud mínima: 8 caracteres
+
+2. Acceso:
+   - Crear usuario específico para la aplicación
+   - Limitar permisos según necesidad
+   - No usar sa en producción
+
+## Mantenimiento
+- Backup diario recomendado
+- Monitorear crecimiento de RefreshTokens
+- Limpiar tokens expirados periódicamente
+- Revisar índices regularmente
+
+## Troubleshooting
+1. Error de conexión:
+   - Verificar cadena de conexión
+   - Comprobar credenciales y permisos
+
+2. Error de índices únicos:
+   - Validar duplicados en Username/Email
+   - Verificar estado IsActive
+
+3. Problemas de rendimiento:
+   - Revisar planes de ejecución
+   - Verificar estadísticas actualizadas
