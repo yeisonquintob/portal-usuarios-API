@@ -1,44 +1,39 @@
-# Manual de Implementación de Base de Datos - Portal de Usuarios
+Manual de Implementación de Base de Datos - Portal de Usuarios
+Requisitos previos
 
-## Requisitos Previos
-- SQL Server 2019 o superior instalado
-- SQL Server Management Studio (SSMS)
-- Credenciales de administrador
+SQL Server 2019 o superior instalado
+Estudio de administración de SQL Server (SSMS)
+Credenciales de administrador
 
-## Pasos de Implementación
-
-### 1. Configuración Inicial
-```sql
--- Crear y usar la base de datos
+Pasos de implementación
+1. Configuración inicial
+sqlCopiar-- Crear y usar la base de datos
 CREATE DATABASE UserPortalDB
 GO
 USE UserPortalDB
-```
+2. Estructura de tablas
+Roles (Tabla Maestra)
 
-### 2. Estructura de Tablas
+Almacena los tipos de usuarios
+Solo dos roles iniciales: Admin y Usuario
 
-#### Roles (Tabla Maestra)
-- Almacena los tipos de usuarios
-- Solo dos roles iniciales: Admin y User
-```sql
-CREATE TABLE [dbo].[Roles] (
+sqlCopiarCREATE TABLE [dbo].[Roles] (
     [Id] INT IDENTITY(1,1) PRIMARY KEY,
     [Name] NVARCHAR(50) NOT NULL,
     [Description] NVARCHAR(200) NULL,
     [CreatedAt] DATETIME2 NOT NULL DEFAULT GETUTCDATE(),
     [IsActive] BIT NOT NULL DEFAULT 1
 )
-```
+Usuarios (Tabla Principal)
 
-#### Users (Tabla Principal)
-- Información de usuarios
-- Contraseñas hasheadas con BCrypt
-```sql
-CREATE TABLE [dbo].[Users] (
+Información de usuario
+Contraseñas hasheadas con BCrypt (incluye sal internamente)
+
+sqlCopiarCREATE TABLE [dbo].[Users] (
     [Id] INT IDENTITY(1,1) PRIMARY KEY,
     [Username] NVARCHAR(50) NOT NULL,
     [Email] NVARCHAR(100) NOT NULL,
-    [PasswordHash] NVARCHAR(256) NOT NULL,
+    [PasswordHash] NVARCHAR(256) NOT NULL, -- BCrypt hash que incluye el salt
     [FirstName] NVARCHAR(50) NOT NULL,
     [LastName] NVARCHAR(50) NOT NULL,
     [ProfilePicture] NVARCHAR(2048) NULL,
@@ -47,12 +42,11 @@ CREATE TABLE [dbo].[Users] (
     [CreatedAt] DATETIME2 NOT NULL DEFAULT GETUTCDATE(),
     [IsActive] BIT NOT NULL DEFAULT 1
 )
-```
+RefreshTokens (Tabla de Seguridad)
 
-#### RefreshTokens (Tabla de Seguridad)
-- Gestión de tokens JWT
-```sql
-CREATE TABLE [dbo].[RefreshTokens] (
+Gestión de tokens JWT
+
+sqlCopiarCREATE TABLE [dbo].[RefreshTokens] (
     [Id] INT IDENTITY(1,1) PRIMARY KEY,
     [Token] NVARCHAR(256) NOT NULL,
     [ExpiresAt] DATETIME2 NOT NULL,
@@ -64,11 +58,8 @@ CREATE TABLE [dbo].[RefreshTokens] (
     CONSTRAINT [FK_RefreshTokens_Users] FOREIGN KEY ([UserId]) 
         REFERENCES [Users]([Id]) ON DELETE CASCADE
 )
-```
-
-### 3. Índices Importantes
-```sql
--- Users
+3. Índices importantes
+sqlCopiar-- Users
 CREATE UNIQUE INDEX [UQ_Users_Username] ON [Users]([Username]) WHERE IsActive = 1
 CREATE UNIQUE INDEX [UQ_Users_Email] ON [Users]([Email]) WHERE IsActive = 1
 CREATE INDEX [IX_Users_RoleId] ON [Users]([RoleId])
@@ -76,53 +67,93 @@ CREATE INDEX [IX_Users_RoleId] ON [Users]([RoleId])
 -- RefreshTokens
 CREATE INDEX [IX_RefreshTokens_Token] ON [RefreshTokens]([Token])
 CREATE INDEX [IX_RefreshTokens_UserId_Status] ON [RefreshTokens]([UserId], [InvalidatedAt], [UsedAt], [ExpiresAt])
-```
-
-### 4. Datos Iniciales
-```sql
--- Roles básicos
+4. Datos iniciales
+sqlCopiar-- Roles básicos
 INSERT INTO [Roles] ([Name], [Description]) VALUES
 ('Admin', 'Administrador del sistema con acceso total'),
-('User', 'Usuario regular con acceso limitado')
-```
+('User', 'Usuario regular con acceso limitado');
 
-### 5. Verificación
-```sql
--- Validar estructura
+-- Usuario administrador por defecto
+-- Password: Admin123!
+INSERT INTO [Users] (
+    [Username], 
+    [Email], 
+    [PasswordHash], 
+    [FirstName], 
+    [LastName], 
+    [RoleId], 
+    [CreatedAt], 
+    [IsActive]
+) VALUES (
+    'admin',
+    'admin@example.com',
+    '$2a$11$KAt08HK8fW3AR4EEgKHrJuu4wWmWdW7rRirNygRS3ndvx2pYUICL2',
+    'System',
+    'Administrator',
+    1,
+    GETUTCDATE(),
+    1
+);
+5. Verificación
+sqlCopiar-- Validar estructura
 SELECT * FROM sys.tables
 SELECT * FROM sys.indexes
 SELECT * FROM Roles
+SELECT * FROM Users
 
 -- Verificar constraints
 SELECT * FROM sys.foreign_keys
-```
+Consideraciones de seguridad
 
-## Consideraciones de Seguridad
-1. Passwords:
-   - Solo almacenar hashes BCrypt
-   - Nunca almacenar contraseñas en texto plano
-   - Longitud mínima: 8 caracteres
+Contraseñas:
 
-2. Acceso:
-   - Crear usuario específico para la aplicación
-   - Limitar permisos según necesidad
-   - No usar sa en producción
+Solo almacena hashes BCrypt
+Nunca almacenar contraseñas en texto plano
+Longitud mínima: 8 caracteres
+BCrypt maneja la sal internamente
 
-## Mantenimiento
-- Backup diario recomendado
-- Monitorear crecimiento de RefreshTokens
-- Limpiar tokens expirados periódicamente
-- Revisar índices regularmente
 
-## Troubleshooting
-1. Error de conexión:
-   - Verificar cadena de conexión
-   - Comprobar credenciales y permisos
+Acceso:
 
-2. Error de índices únicos:
-   - Validar duplicados en Username/Email
-   - Verificar estado IsActive
+Crear usuario específico para la aplicación
+Limitar permisos según necesidad
+No utilizar en producción
 
-3. Problemas de rendimiento:
-   - Revisar planes de ejecución
-   - Verificar estadísticas actualizadas
+
+
+Mantenimiento
+
+Copia de seguridad diaria recomendada
+Monitorear el crecimiento de RefreshTokens
+Limpiar tokens vencidos periódicamente
+Revisar índices regularmente
+
+Solución de problemas
+
+Error de conexión:
+
+Verificar cadena de conexión
+Comprobar credenciales y permisos
+
+
+Error de índices únicos:
+
+Validar duplicados en Nombre de usuario/Email
+Verificar estado IsActive
+
+
+Problemas de rendimiento:
+
+Revisar planos de ejecucion
+Verificar estadísticas actualizadas
+
+
+
+Script de Migración (Si ya existe la base de datos)
+sqlCopiar-- Eliminar la columna PasswordSalt si existe
+IF EXISTS (SELECT 1 FROM sys.columns 
+           WHERE object_id = OBJECT_ID('Users') 
+           AND name = 'PasswordSalt')
+BEGIN
+    ALTER TABLE Users DROP COLUMN PasswordSalt;
+END
