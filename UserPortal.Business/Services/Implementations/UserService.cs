@@ -24,6 +24,8 @@ public class UserService : IUserService
     private readonly IMapper _mapper;
     private readonly IPasswordHasher _passwordHasher;
     private readonly ILogger<UserService> _logger;
+    private const int MaxProfilePictureSize = 5 * 1024 * 1024; // 5MB
+    private static readonly string[] AllowedImageTypes = { "image/jpeg", "image/png", "image/gif" };
 
     public UserService(
         IUnitOfWork unitOfWork,
@@ -31,27 +33,33 @@ public class UserService : IUserService
         IPasswordHasher passwordHasher,
         ILogger<UserService> logger)
     {
-        _unitOfWork = unitOfWork;
-        _mapper = mapper;
-        _passwordHasher = passwordHasher;
-        _logger = logger;
+        _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
+        _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+        _passwordHasher = passwordHasher ?? throw new ArgumentNullException(nameof(passwordHasher));
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
     public async Task<UserResponseDTO> GetUserByIdAsync(int userId)
     {
         try
         {
+            _logger.LogInformation("Obteniendo usuario por ID: {UserId}", userId);
+            
             var user = await _unitOfWork.Users.GetByIdAsync(userId);
             if (user == null)
             {
-                throw new NotFoundException("User not found", userId);
+                _logger.LogWarning("Usuario no encontrado: {UserId}", userId);
+                throw new NotFoundException(nameof(User), userId);
             }
 
-            return _mapper.Map<UserResponseDTO>(user);
+            var userDto = _mapper.Map<UserResponseDTO>(user);
+            _logger.LogInformation("Usuario encontrado exitosamente: {UserId}", userId);
+            
+            return userDto;
         }
-        catch (Exception ex)
+        catch (Exception ex) when (ex is not NotFoundException)
         {
-            _logger.LogError(ex, "Error getting user by ID: {UserId}", userId);
+            _logger.LogError(ex, "Error obteniendo usuario por ID: {UserId}", userId);
             throw;
         }
     }
@@ -60,12 +68,29 @@ public class UserService : IUserService
     {
         try
         {
+            _logger.LogInformation("Obteniendo usuarios paginados. Página: {PageNumber}, Tamaño: {PageSize}",
+                parameters.PageNumber, parameters.PageSize);
+
+            parameters ??= new PaginationParams();
+
             var users = await _unitOfWork.Users.GetAllPaginatedAsync(parameters);
-            return _mapper.Map<PaginatedResult<UserResponseDTO>>(users);
+            
+            if (!users.Items.Any())
+            {
+                _logger.LogInformation("No se encontraron usuarios");
+                return PaginatedResult<UserResponseDTO>.Empty(parameters);
+            }
+
+            var userDtos = _mapper.Map<List<UserResponseDTO>>(users.Items);
+            var result = new PaginatedResult<UserResponseDTO>(userDtos, users.TotalItems, parameters);
+
+            _logger.LogInformation("Se encontraron {TotalItems} usuarios", result.TotalItems);
+            
+            return result;
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error getting paginated users");
+            _logger.LogError(ex, "Error obteniendo usuarios paginados");
             throw;
         }
     }
@@ -74,23 +99,28 @@ public class UserService : IUserService
     {
         try
         {
+            _logger.LogInformation("Actualizando usuario: {UserId}", userId);
+
             var user = await _unitOfWork.Users.GetByIdAsync(userId);
             if (user == null)
             {
-                throw new NotFoundException("User not found", userId);
+                _logger.LogWarning("Usuario no encontrado para actualizar: {UserId}", userId);
+                throw new NotFoundException(nameof(User), userId);
             }
 
             // Verificar email único
             if (!string.IsNullOrEmpty(updateDto.Email) && 
-                updateDto.Email != user.Email && 
-                await _unitOfWork.Users.IsEmailInUseAsync(updateDto.Email))
+                updateDto.Email != user.Email)
             {
-                throw new ValidationException(ErrorMessages.EmailAlreadyExists);
+                if (await _unitOfWork.Users.IsEmailInUseAsync(updateDto.Email))
+                {
+                    _logger.LogWarning("Intento de actualizar a un email ya existente: {Email}", updateDto.Email);
+                    throw new ValidationException(ErrorMessages.EmailAlreadyExists);
+                }
+                user.Email = updateDto.Email;
             }
 
             // Actualizar campos básicos
-            if (!string.IsNullOrEmpty(updateDto.Email))
-                user.Email = updateDto.Email;
             if (!string.IsNullOrEmpty(updateDto.FirstName))
                 user.FirstName = updateDto.FirstName;
             if (!string.IsNullOrEmpty(updateDto.LastName))
@@ -106,20 +136,25 @@ public class UserService : IUserService
 
                 if (!isValidPassword)
                 {
+                    _logger.LogWarning("Contraseña actual incorrecta para usuario: {UserId}", userId);
                     throw new ValidationException(ErrorMessages.CurrentPasswordIncorrect);
                 }
 
                 user.PasswordHash = _passwordHasher.HashPassword(updateDto.NewPassword);
+                _logger.LogInformation("Contraseña actualizada para usuario: {UserId}", userId);
             }
 
             _unitOfWork.Users.Update(user);
             await _unitOfWork.SaveChangesAsync();
 
-            return _mapper.Map<UserResponseDTO>(user);
+            var updatedUserDto = _mapper.Map<UserResponseDTO>(user);
+            _logger.LogInformation("Usuario actualizado exitosamente: {UserId}", userId);
+            
+            return updatedUserDto;
         }
-        catch (Exception ex)
+        catch (Exception ex) when (ex is not NotFoundException && ex is not ValidationException)
         {
-            _logger.LogError(ex, "Error updating user: {UserId}", userId);
+            _logger.LogError(ex, "Error actualizando usuario: {UserId}", userId);
             throw;
         }
     }
@@ -128,18 +163,37 @@ public class UserService : IUserService
     {
         try
         {
+            _logger.LogInformation("Eliminando usuario: {UserId}", userId);
+
             var user = await _unitOfWork.Users.GetByIdAsync(userId);
             if (user == null)
             {
-                throw new NotFoundException("User not found", userId);
+                _logger.LogWarning("Usuario no encontrado para eliminar: {UserId}", userId);
+                throw new NotFoundException(nameof(User), userId);
+            }
+
+            // Verificar si es el último administrador
+            if (user.Role?.Name == UserRoles.Admin)
+            {
+                var adminCount = await _unitOfWork.Users
+                    .GetQueryable()
+                    .CountAsync(u => u.Role!.Name == UserRoles.Admin && u.IsActive);
+
+                if (adminCount <= 1)
+                {
+                    _logger.LogWarning("Intento de eliminar el último administrador: {UserId}", userId);
+                    throw new ValidationException("No se puede eliminar el último administrador del sistema");
+                }
             }
 
             _unitOfWork.Users.Delete(user);
             await _unitOfWork.SaveChangesAsync();
+
+            _logger.LogInformation("Usuario eliminado exitosamente: {UserId}", userId);
         }
-        catch (Exception ex)
+        catch (Exception ex) when (ex is not NotFoundException && ex is not ValidationException)
         {
-            _logger.LogError(ex, "Error deleting user: {UserId}", userId);
+            _logger.LogError(ex, "Error eliminando usuario: {UserId}", userId);
             throw;
         }
     }
@@ -150,6 +204,15 @@ public class UserService : IUserService
     {
         try
         {
+            _logger.LogInformation("Buscando usuarios con término: {SearchTerm}", searchTerm);
+
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                throw new ValidationException("El término de búsqueda no puede estar vacío");
+            }
+
+            parameters ??= new PaginationParams();
+
             var query = _unitOfWork.Users.GetQueryable()
                 .Where(u => 
                     u.Username.Contains(searchTerm) ||
@@ -164,11 +227,16 @@ public class UserService : IUserService
                 .ToListAsync();
 
             var userDtos = _mapper.Map<List<UserResponseDTO>>(items);
-            return new PaginatedResult<UserResponseDTO>(userDtos, totalItems, parameters);
+            var result = new PaginatedResult<UserResponseDTO>(userDtos, totalItems, parameters);
+
+            _logger.LogInformation("Se encontraron {Count} usuarios con el término: {SearchTerm}", 
+                result.TotalItems, searchTerm);
+
+            return result;
         }
-        catch (Exception ex)
+        catch (Exception ex) when (ex is not ValidationException)
         {
-            _logger.LogError(ex, "Error searching users with term: {SearchTerm}", searchTerm);
+            _logger.LogError(ex, "Error buscando usuarios con término: {SearchTerm}", searchTerm);
             throw;
         }
     }
@@ -177,27 +245,16 @@ public class UserService : IUserService
     {
         try
         {
+            _logger.LogInformation("Actualizando foto de perfil para usuario: {UserId}", userId);
+
             var user = await _unitOfWork.Users.GetByIdAsync(userId);
             if (user == null)
             {
-                throw new NotFoundException("User not found", userId);
+                _logger.LogWarning("Usuario no encontrado: {UserId}", userId);
+                throw new NotFoundException(nameof(User), userId);
             }
 
-            // Validar archivo
-            if (file == null || file.Length == 0)
-            {
-                throw new ValidationException("No file was uploaded");
-            }
-
-            if (!file.ContentType.StartsWith("image/"))
-            {
-                throw new ValidationException("File must be an image");
-            }
-
-            if (file.Length > 5 * 1024 * 1024) // 5MB
-            {
-                throw new ValidationException("File size exceeds maximum limit (5MB)");
-            }
+            ValidateProfilePicture(file);
 
             // Eliminar foto anterior si existe
             if (!string.IsNullOrEmpty(user.ProfilePicture))
@@ -206,6 +263,7 @@ public class UserService : IUserService
                 if (File.Exists(oldPath))
                 {
                     File.Delete(oldPath);
+                    _logger.LogInformation("Foto de perfil anterior eliminada: {Path}", oldPath);
                 }
             }
 
@@ -215,6 +273,7 @@ public class UserService : IUserService
             var absolutePath = Path.Combine("wwwroot", relativePath);
 
             Directory.CreateDirectory(Path.GetDirectoryName(absolutePath)!);
+            
             using (var stream = new FileStream(absolutePath, FileMode.Create))
             {
                 await file.CopyToAsync(stream);
@@ -225,12 +284,32 @@ public class UserService : IUserService
             _unitOfWork.Users.Update(user);
             await _unitOfWork.SaveChangesAsync();
 
+            _logger.LogInformation("Foto de perfil actualizada exitosamente para usuario: {UserId}", userId);
+
             return user.ProfilePicture;
         }
-        catch (Exception ex)
+        catch (Exception ex) when (ex is not NotFoundException && ex is not ValidationException)
         {
-            _logger.LogError(ex, "Error updating profile picture for user: {UserId}", userId);
+            _logger.LogError(ex, "Error actualizando foto de perfil para usuario: {UserId}", userId);
             throw;
+        }
+    }
+
+    private void ValidateProfilePicture(IFormFile file)
+    {
+        if (file == null || file.Length == 0)
+        {
+            throw new ValidationException("No se ha proporcionado ningún archivo");
+        }
+
+        if (!AllowedImageTypes.Contains(file.ContentType.ToLower()))
+        {
+            throw new ValidationException("El archivo debe ser una imagen (JPEG, PNG o GIF)");
+        }
+
+        if (file.Length > MaxProfilePictureSize)
+        {
+            throw new ValidationException($"El archivo no debe exceder {MaxProfilePictureSize / 1024 / 1024}MB");
         }
     }
 }
