@@ -1,4 +1,3 @@
-// Ruta: ./UserPortal.API/Controllers/UserController.cs
 using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
@@ -11,6 +10,7 @@ using UserPortal.Shared.DTOs.Response;
 using UserPortal.Shared.Models;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
+using UserPortal.Shared.Exceptions; 
 
 namespace UserPortal.API.Controllers;
 
@@ -26,170 +26,209 @@ public class UserController : ControllerBase
         IUserService userService,
         ILogger<UserController> logger)
     {
-        _userService = userService;
-        _logger = logger;
+        _userService = userService ?? throw new ArgumentNullException(nameof(userService));
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
     /// <summary>
     /// Obtiene el perfil de un usuario por su ID
     /// </summary>
-    /// <param name="id">ID del usuario</param>
-    /// <returns>Información del perfil del usuario</returns>
     [HttpGet("{id}")]
-    [ProducesResponseType(typeof(ApiResponse<UserResponseDTO>), 200)]
-    [ProducesResponseType(typeof(ApiResponse<>), 404)]
+    [ProducesResponseType(typeof(ApiResponse<UserResponseDTO>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
+    [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status403Forbidden)]
     public async Task<IActionResult> GetUserProfile(int id)
     {
         try
         {
-            // Verificar si el usuario actual tiene permiso para ver este perfil
             var currentUserId = User.GetUserId();
             var userRole = User.GetUserRole();
 
             if (currentUserId != id && userRole != UserRoles.Admin)
             {
-                return Forbid();
+                _logger.LogWarning("Acceso denegado: Usuario {CurrentUserId} intentó acceder al perfil {UserId}", currentUserId, id);
+                return StatusCode(StatusCodes.Status403Forbidden, 
+                    ApiResponse<object>.CreateError("No tiene permisos para ver este perfil"));
             }
 
             var user = await _userService.GetUserByIdAsync(id);
-            return Ok(ApiResponse<UserResponseDTO>.CreateSuccess(user));
+            return Ok(ApiResponse<UserResponseDTO>.CreateSuccess(user, "Perfil obtenido exitosamente"));
+        }
+        catch (NotFoundException ex)
+        {
+            _logger.LogWarning(ex, "Usuario no encontrado: {UserId}", id);
+            return NotFound(ApiResponse<object>.CreateError($"No se encontró el usuario con ID: {id}"));
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error obteniendo perfil de usuario: {UserId}", id);
-            throw;
+            return StatusCode(StatusCodes.Status500InternalServerError,
+                ApiResponse<object>.CreateError("Error interno del servidor al obtener el perfil"));
         }
     }
 
     /// <summary>
     /// Obtiene una lista paginada de usuarios (solo para administradores)
     /// </summary>
-    /// <param name="parameters">Parámetros de paginación</param>
-    /// <returns>Lista paginada de usuarios</returns>
     [HttpGet]
     [Authorize(Roles = UserRoles.Admin)]
-    [ProducesResponseType(typeof(ApiResponse<PaginatedResult<UserResponseDTO>>), 200)]
+    [ProducesResponseType(typeof(ApiResponse<PaginatedResult<UserResponseDTO>>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status403Forbidden)]
     public async Task<IActionResult> GetUsers([FromQuery] PaginationParams parameters)
     {
         try
         {
+            parameters ??= new PaginationParams();
+            
+            if (!parameters.IsValid())
+            {
+                return BadRequest(ApiResponse<object>.CreateError("Parámetros de paginación inválidos"));
+            }
+
             var users = await _userService.GetUsersAsync(parameters);
-            return Ok(ApiResponse<PaginatedResult<UserResponseDTO>>.CreateSuccess(users));
+            return Ok(ApiResponse<PaginatedResult<UserResponseDTO>>.CreateSuccess(
+                users,
+                $"Se encontraron {users.TotalItems} usuarios"));
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error obteniendo lista de usuarios");
-            throw;
+            return StatusCode(StatusCodes.Status500InternalServerError,
+                ApiResponse<object>.CreateError("Error interno del servidor al obtener la lista de usuarios"));
         }
     }
 
     /// <summary>
     /// Actualiza el perfil de un usuario
     /// </summary>
-    /// <param name="id">ID del usuario</param>
-    /// <param name="updateDto">Datos a actualizar</param>
-    /// <returns>Perfil actualizado</returns>
     [HttpPut("{id}")]
-    [ProducesResponseType(typeof(ApiResponse<UserResponseDTO>), 200)]
-    [ProducesResponseType(typeof(ApiResponse<>), 400)]
-    [ProducesResponseType(typeof(ApiResponse<>), 404)]
+    [ProducesResponseType(typeof(ApiResponse<UserResponseDTO>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status403Forbidden)]
     public async Task<IActionResult> UpdateProfile(int id, [FromBody] UpdateUserDTO updateDto)
     {
         try
         {
-            // Verificar si el usuario actual tiene permiso para actualizar este perfil
+            if (updateDto == null)
+            {
+                return BadRequest(ApiResponse<object>.CreateError("No se proporcionaron datos para actualizar"));
+            }
+
             var currentUserId = User.GetUserId();
             var userRole = User.GetUserRole();
 
             if (currentUserId != id && userRole != UserRoles.Admin)
             {
-                return Forbid();
+                return StatusCode(StatusCodes.Status403Forbidden,
+                    ApiResponse<object>.CreateError("No tiene permisos para actualizar este perfil"));
             }
 
             var updatedUser = await _userService.UpdateUserAsync(id, updateDto);
-            return Ok(ApiResponse<UserResponseDTO>.CreateSuccess(
-                updatedUser, 
-                SuccessMessages.ProfileUpdated));
+            return Ok(ApiResponse<UserResponseDTO>.CreateSuccess(updatedUser, SuccessMessages.ProfileUpdated));
+        }
+        catch (ValidationException ex)
+        {
+            _logger.LogWarning(ex, "Error de validación actualizando usuario: {UserId}", id);
+            return BadRequest(ApiResponse<object>.CreateError(ex.Message, ex.Errors));
+        }
+        catch (NotFoundException ex)
+        {
+            _logger.LogWarning(ex, "Usuario no encontrado: {UserId}", id);
+            return NotFound(ApiResponse<object>.CreateError(ex.Message));
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error actualizando perfil de usuario: {UserId}", id);
-            throw;
+            return StatusCode(StatusCodes.Status500InternalServerError,
+                ApiResponse<object>.CreateError("Error interno del servidor al actualizar el perfil"));
         }
     }
 
     /// <summary>
     /// Elimina un usuario (soft delete)
     /// </summary>
-    /// <param name="id">ID del usuario a eliminar</param>
-    /// <returns>Resultado de la operación</returns>
     [HttpDelete("{id}")]
     [Authorize(Roles = UserRoles.Admin)]
-    [ProducesResponseType(typeof(ApiResponse<>), 200)]
-    [ProducesResponseType(typeof(ApiResponse<>), 404)]
+    [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> DeleteUser(int id)
     {
         try
         {
             await _userService.DeleteUserAsync(id);
-            return Ok(ApiResponse<object>.CreateSuccess(
-                message: SuccessMessages.UserDeleted));
+            _logger.LogInformation("Usuario eliminado exitosamente: {UserId}", id);
+            return Ok(ApiResponse<object>.CreateSuccess(message: SuccessMessages.UserDeleted));
+        }
+        catch (NotFoundException ex)
+        {
+            _logger.LogWarning(ex, "Usuario no encontrado para eliminar: {UserId}", id);
+            return NotFound(ApiResponse<object>.CreateError(ex.Message));
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error eliminando usuario: {UserId}", id);
-            throw;
+            return StatusCode(StatusCodes.Status500InternalServerError,
+                ApiResponse<object>.CreateError("Error interno del servidor al eliminar el usuario"));
         }
     }
 
     /// <summary>
     /// Busca usuarios por término de búsqueda (solo para administradores)
     /// </summary>
-    /// <param name="searchTerm">Término de búsqueda</param>
-    /// <param name="parameters">Parámetros de paginación</param>
-    /// <returns>Lista paginada de usuarios que coinciden con la búsqueda</returns>
     [HttpGet("search")]
     [Authorize(Roles = UserRoles.Admin)]
-    [ProducesResponseType(typeof(ApiResponse<PaginatedResult<UserResponseDTO>>), 200)]
+    [ProducesResponseType(typeof(ApiResponse<PaginatedResult<UserResponseDTO>>), StatusCodes.Status200OK)]
     public async Task<IActionResult> SearchUsers(
         [FromQuery] string searchTerm,
         [FromQuery] PaginationParams parameters)
     {
         try
         {
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                return BadRequest(ApiResponse<object>.CreateError("El término de búsqueda no puede estar vacío"));
+            }
+
+            parameters ??= new PaginationParams();
+            
+            if (!parameters.IsValid())
+            {
+                return BadRequest(ApiResponse<object>.CreateError("Parámetros de paginación inválidos"));
+            }
+
             var users = await _userService.SearchUsersAsync(searchTerm, parameters);
-            return Ok(ApiResponse<PaginatedResult<UserResponseDTO>>.CreateSuccess(users));
+            return Ok(ApiResponse<PaginatedResult<UserResponseDTO>>.CreateSuccess(
+                users,
+                $"Se encontraron {users.TotalItems} usuarios"));
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error buscando usuarios con término: {SearchTerm}", searchTerm);
-            throw;
+            return StatusCode(StatusCodes.Status500InternalServerError,
+                ApiResponse<object>.CreateError("Error interno del servidor al buscar usuarios"));
         }
     }
 
     /// <summary>
     /// Actualiza la foto de perfil de un usuario
     /// </summary>
-    /// <param name="id">ID del usuario</param>
-    /// <param name="file">Archivo de imagen</param>
-    /// <returns>URL de la nueva imagen de perfil</returns>
     [HttpPut("{id}/profile-picture")]
-    [ProducesResponseType(typeof(ApiResponse<string>), 200)]
-    [ProducesResponseType(typeof(ApiResponse<>), 400)]
+    [ProducesResponseType(typeof(ApiResponse<string>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status403Forbidden)]
     public async Task<IActionResult> UpdateProfilePicture(int id, [FromForm] IFormFile file)
     {
         try
         {
-            // Verificar permisos
             var currentUserId = User.GetUserId();
             var userRole = User.GetUserRole();
 
             if (currentUserId != id && userRole != UserRoles.Admin)
             {
-                return Forbid();
+                return StatusCode(StatusCodes.Status403Forbidden,
+                    ApiResponse<object>.CreateError("No tiene permisos para actualizar esta foto de perfil"));
             }
 
-            // Validar archivo
             if (file == null || file.Length == 0)
             {
                 return BadRequest(ApiResponse<object>.CreateError("No se ha proporcionado ningún archivo"));
@@ -202,25 +241,29 @@ public class UserController : ControllerBase
 
             if (file.Length > 5 * 1024 * 1024) // 5MB
             {
-                return BadRequest(ApiResponse<object>.CreateError("El archivo es demasiado grande"));
+                return BadRequest(ApiResponse<object>.CreateError("El archivo no debe exceder 5MB"));
             }
 
-            // Procesar y guardar imagen
             var imageUrl = await _userService.UpdateProfilePictureAsync(id, file);
-            
-            return Ok(ApiResponse<string>.CreateSuccess(
-                imageUrl, 
-                SuccessMessages.ProfileImageUpdated));
+            return Ok(ApiResponse<string>.CreateSuccess(imageUrl, SuccessMessages.ProfileImageUpdated));
+        }
+        catch (ValidationException ex)
+        {
+            return BadRequest(ApiResponse<object>.CreateError(ex.Message));
+        }
+        catch (NotFoundException ex)
+        {
+            return NotFound(ApiResponse<object>.CreateError(ex.Message));
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error actualizando foto de perfil: {UserId}", id);
-            throw;
+            return StatusCode(StatusCodes.Status500InternalServerError,
+                ApiResponse<object>.CreateError("Error interno del servidor al actualizar la foto de perfil"));
         }
     }
 }
 
-// Extensiones de ClaimsPrincipal para obtener información del usuario actual
 public static class ClaimsPrincipalExtensions
 {
     public static int GetUserId(this ClaimsPrincipal user)
